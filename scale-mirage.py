@@ -2,12 +2,9 @@ import pandas as pda
 import numpy as npy
 import matplotlib.pyplot as mat
 
-# Load dataset
+# Loading the dataset
 df = pda.read_csv("rawData.csv")
-
-# -------------------------
 # Plot 1: Raw Data
-# -------------------------
 mat.figure(figsize=(6, 6))
 mat.scatter(df['x'], df['y'], s=5)
 mat.title("Plot 1: Raw Data (x vs y)")
@@ -31,9 +28,7 @@ filtered = df[
 x_norm = (filtered['x'] - filtered['x'].min()) / (filtered['x'].max() - filtered['x'].min())
 y_norm = (filtered['y'] - filtered['y'].min()) / (filtered['y'].max() - filtered['y'].min())
 
-# -------------------------
 # Plot 2: Final Result
-# -------------------------
 mat.figure(figsize=(6, 6))
 mat.scatter(x_norm, y_norm, s=5)
 mat.title("Plot 2: Filtered & Normalized Data")
